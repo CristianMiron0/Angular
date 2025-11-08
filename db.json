@@ -1,57 +1,85 @@
 {
   "tasks": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Planificar proyecto Angular",
       "description": "Definir la estructura y componentes principales del proyecto.",
       "completed": true,
       "priority": "high",
       "dueDate": "2024-01-20",
-      "category": "Desarollo",
-      "tags": ["angular", "planificacion"],
+      "category": "Desarrollo",
+      "tags": [
+        "angular",
+        "planificacion"
+      ],
       "userId": 1,
       "createdAt": "2024-01-15T10:00:00Z",
-      "updatedAt": "2024-01-16T14:30:00Z"
+      "updatedAt": "2025-11-08T21:55:52.423Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Disenar interfaz de usuario",
       "description": "Crear servicios para consumir la API REST del backend",
       "completed": false,
       "priority": "medium",
       "dueDate": "2024-01-25",
       "category": "Diseno",
-      "tags": ["iu", "ux", "design"],
+      "tags": [
+        "ui",
+        "ux",
+        "design"
+      ],
       "userId": 1,
       "createdAt": "2024-01-16T09:15:00Z",
       "updatedAt": "2024-01-16T09:15:00Z"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Implementar servicios API",
       "description": "Crear servicios para consumir la API REST del backend",
       "completed": false,
       "priority": "high",
       "dueDate": "2024-01-22",
-      "category": "Desarollo",
-      "tags": ["api", "services", "http"],
+      "category": "Desarrollo",
+      "tags": [
+        "api",
+        "services",
+        "http"
+      ],
       "userId": 1,
       "createdAt": "2024-01-16T11:20:00Z",
-      "updatedAt": "2024-01-16T11:20:00Z"
+      "updatedAt": "2025-11-08T21:55:53.639Z"
     }
   ],
   "categories": [
-    {"id": 1, "name": "Desarrollo", "color": "#1976d2"},
-    {"id": 2, "name": "Diseno", "color": "#4ECDC4"},
-    {"id": 3, "name": "Testing", "color": "#45B7D1"},
-    {"id": 4, "name": "Documentacion", "color": "#96CEB4"}
+    {
+      "id": "1",
+      "name": "Desarrollo",
+      "color": "#1976d2"
+    },
+    {
+      "id": "2",
+      "name": "Diseno",
+      "color": "#4ECDC4"
+    },
+    {
+      "id": "3",
+      "name": "Testing",
+      "color": "#45B7D1"
+    },
+    {
+      "id": "4",
+      "name": "Documentacion",
+      "color": "#96CEB4"
+    }
   ],
   "users": [
     {
-      "id": 1,
-      "name": "devuser",
+      "id": "1",
+      "username": "devuser",
       "email": "dev@example.com",
-      "name": "Desarrollador Angular"
+      "name": "Desarrollador Angular",
+      "active": true
     }
   ]
 }

@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { NavigationService } from './services/navigation.service';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { UserListComponent } from './user-list/user-list.component';
 
 @Component({
   selector: 'app-root',
@@ -12,9 +9,8 @@ import { UserListComponent } from './user-list/user-list.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title(title: any) {
-    throw new Error('Method not implemented.');
-  }
+  title = 'mi-aplicacion-angular';
+
   constructor(
     public navService: NavigationService,
     private router: Router

@@ -13,7 +13,10 @@ export class NavigationService {
   menuItems = signal<MenuItem[]>([
     { label: 'Inicio', path: '/home', protected: false },
     { label: 'Acerca de', path: '/about', protected: false },
-    { label: 'Dashboard', path: '/dashboard', protected: true }
+    { label: 'Contacto', path: '/contact', protected: false },
+    { label: 'Usuarios', path: '/user-list', protected: false },
+    { label: 'Dashboard', path: '/dashboard', protected: true },
+    { label: 'Tareas', path: '/tasks', protected: true }
   ]);
 
   isLoggedIn = signal(false);
@@ -23,16 +26,17 @@ export class NavigationService {
   }
 
   checkAuthStatus() {
-    this.isLoggedIn.set(localStorage.getItem('isLoggedIn') === 'true');
+    const isAuth = localStorage.getItem('isAuthenticated') === 'true';
+    this.isLoggedIn.set(isAuth);
   }
 
   login() {
-    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('isAuthenticated', 'true');
     this.isLoggedIn.set(true);
   }
 
   logout() {
-    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('isAuthenticated');
     this.isLoggedIn.set(false);
   }
 }

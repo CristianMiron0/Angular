@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
-import { authGuard } from './auth/auth.guard';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
   { 
-    path: '', redirectTo: '/home', pathMatch: 'full' 
+    path: '', 
+    redirectTo: '/home', 
+    pathMatch: 'full' 
   },
   { 
     path: 'home',
@@ -14,8 +16,20 @@ export const routes: Routes = [
     loadComponent: () => import('./about/about.component').then(m => m.AboutComponent)
   },
   { 
+    path: 'contact',
+    loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent)
+  },
+  { 
     path: 'user/:id',
     loadComponent: () => import('./user-detail/user-detail.component').then(m => m.UserDetailComponent)
+  },
+  { 
+    path: 'user-list',
+    loadComponent: () => import('./user-list/user-list.component').then(m => m.UserListComponent)
+  },
+  { 
+    path: 'user-management',
+    loadComponent: () => import('./user-management/user-management.component').then(m => m.UserManagementComponent)
   },
   { 
     path: 'dashboard',
@@ -27,10 +41,12 @@ export const routes: Routes = [
     loadComponent: () => import('./login/login.component').then(m => m.LoginComponent)
   },
   { 
-    path: '**', redirectTo: '/home' 
+    path: 'tasks', 
+    loadComponent: () => import('./task-manager/task-manager.component').then(m => m.TaskManagerComponent),
+    canActivate: [authGuard]
   },
   { 
-  path: 'tasks', 
-  loadComponent: () => import('./task-manager/task-manager.component').then(m => m.TaskManagerComponent) 
+    path: '**', 
+    redirectTo: '/home' 
   }
 ];

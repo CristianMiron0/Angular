@@ -3,15 +3,14 @@
     <h2>Mi App Angular</h2>
   </div>
 
-  <div class="nav-link">
+  <div class="nav-links">
     @for (item of navService.menuItems(); track item.path) {
-      @if (item.protected || (item.protected && navService.isLoggedIn())) {
+      @if (!item.protected || (item.protected && navService.isLoggedIn())) {
         <a
           [routerLink]="item.path"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
-          >{{ item.label }}
-        </a>
+        >{{ item.label }}</a>
       }
     }
   </div>
@@ -22,7 +21,6 @@
       <button (click)="logout()">Cerrar Sesion</button>
     } @else {
       <a [routerLink]="['/login']" routerLinkActive="active">Login</a>
-      <nav></nav>
     }
   </div>
 </nav>
